@@ -17,7 +17,8 @@ public class SingletonDP {
         }
         return INSTANCE;
     }
-*/
+
+==============================================================
 
     // In this block we are doing eager instantiation
     // Whenever it is required we are creating an Object so
@@ -25,6 +26,21 @@ public class SingletonDP {
     private static final SingletonDP INSTANCE = new SingletonDP();
 
     public static SingletonDP getInstance() {
+        return INSTANCE;
+    }
+*/
+
+// Both the approaches discussed above are not thread safe, so now
+// we'll implement few thread safe approaches
+
+    // Using synchronized method for making this thread safe
+    // implementation
+    private static SingletonDP INSTANCE;
+
+    public static synchronized SingletonDP getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new SingletonDP();
+        }
         return INSTANCE;
     }
 
