@@ -4,6 +4,10 @@ public class SingletonDP {
 
     private SingletonDP() {}
 
+/*
+    // In this block we are doing lazy instantiation
+    // Here, we are checking if the instance is already available
+    // if it is then we return that else creating a new one
     private static SingletonDP INSTANCE;
 
     public static SingletonDP getInstance() {
@@ -11,6 +15,16 @@ public class SingletonDP {
         if (INSTANCE == null) {
             INSTANCE = new SingletonDP();
         }
+        return INSTANCE;
+    }
+*/
+
+    // In this block we are doing eager instantiation
+    // Whenever it is required we are creating an Object so
+    // it's called eager instantiation
+    private static final SingletonDP INSTANCE = new SingletonDP();
+
+    public static SingletonDP getInstance() {
         return INSTANCE;
     }
 
