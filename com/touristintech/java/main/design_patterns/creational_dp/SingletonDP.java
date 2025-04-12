@@ -18,7 +18,7 @@ public class SingletonDP {
         return INSTANCE;
     }
 
-==============================================================
+======================================================================
 
     // In this block we are doing eager instantiation
     // Whenever it is required we are creating an Object so
@@ -28,7 +28,8 @@ public class SingletonDP {
     public static SingletonDP getInstance() {
         return INSTANCE;
     }
-*/
+
+======================================================================
 
 // Both the approaches discussed above are not thread safe, so now
 // we'll implement few thread safe approaches
@@ -43,7 +44,25 @@ public class SingletonDP {
         }
         return INSTANCE;
     }
+*/
+    // With the above approach, we are taking the overhead of synchronization
+    // as we are synchronizing the complete method, so it's an expensive task which we are doing.
 
+    // Now we can optimize the above code where we can just synchronize the required part
+    // this approach also known as double-checked locking approach
+
+    private static SingletonDP INSTANCE;
+
+    public static SingletonDP getInstance() {
+        if (INSTANCE == null) {
+            synchronized (SingletonDP.class) {
+                if (INSTANCE == null) {
+                    INSTANCE = new SingletonDP();
+                }
+            }
+        }
+        return INSTANCE;
+    }
     public boolean isInstanceAvailable() {
         return INSTANCE != null;
     }
