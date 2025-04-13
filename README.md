@@ -4,3 +4,4 @@
 ### 1. First Addition (DESIGN PATTERNS)
 ####    1. Creational Design Patterns
 1.  Singleton Design Pattern
+2.  Builder Design Pattern
