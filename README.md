@@ -5,3 +5,4 @@
 ####    1. Creational Design Patterns
 1.  Singleton Design Pattern
 2.  Builder Design Pattern
+3.  Factory Method Design Pattern
