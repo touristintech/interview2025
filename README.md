@@ -6,3 +6,6 @@
 1.  Singleton Design Pattern
 2.  Builder Design Pattern
 3.  Factory Method Design Pattern
+
+####    2. Structural Design Patterns
+1.  Adapter Design Pattern
